@@ -1,22 +1,24 @@
 #ifndef GAME_H
 #define GAME_H
+#include <QGraphicsView>
+#include <QApplication>
+#include <QGraphicsScene>
+#include <QGraphicsRectItem>
+#include <QGraphicsView>
+#include <QScrollBar>
+#include <QTimer>
+#include "player.h"
 
-#include <QMainWindow>
 
-namespace Ui {
-class game;
-}
-
-class game : public QMainWindow
+class Game : public QGraphicsView
 {
-    Q_OBJECT
-
 public:
-    explicit game(QWidget *parent = 0);
-    ~game();
-
+    Game();
+    void show();
 private:
-    Ui::game *ui;
+    QGraphicsScene *scene;
+    Player *player;
+    QGraphicsView *view;
 };
 
 #endif // GAME_H

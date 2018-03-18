@@ -25,10 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        game.cpp
+        game.cpp \
+    player.cpp \
+    bullet.cpp \
+    airplaneleft.cpp \
+    airplaneright.cpp
 
 HEADERS += \
-        game.h
+        game.h \
+    player.h \
+    bullet.h \
+    airplaneleft.h \
+    airplaneright.h
 
 FORMS += \
         game.ui
