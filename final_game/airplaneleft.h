@@ -2,10 +2,11 @@
 #define AIRPLANELEFT_H
 
 #include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
 #include <QObject>
 
-class airplaneleft : public QObject, public QGraphicsRectItem
+class airplaneleft : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:

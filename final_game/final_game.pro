@@ -29,14 +29,21 @@ SOURCES += \
     player.cpp \
     bullet.cpp \
     airplaneleft.cpp \
-    airplaneright.cpp
+    airplaneright.cpp \
+    score.cpp \
+    lives.cpp
 
 HEADERS += \
         game.h \
     player.h \
     bullet.h \
     airplaneleft.h \
-    airplaneright.h
+    airplaneright.h \
+    score.h \
+    lives.h
 
 FORMS += \
         game.ui
+
+RESOURCES += \
+    resource.qrc

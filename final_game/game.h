@@ -8,13 +8,16 @@
 #include <QScrollBar>
 #include <QTimer>
 #include "player.h"
-
+#include "score.h"
+#include "lives.h"
 
 class Game : public QGraphicsView
 {
 public:
     Game();
     void show();
+    Score *score;
+    Lives *lives;
 private:
     QGraphicsScene *scene;
     Player *player;

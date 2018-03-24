@@ -9,9 +9,9 @@ extern Game* game;
 
 airplaneleft::airplaneleft()
 {
-    int rand_y = rand() % (326);
+    int rand_y = rand() % (350 - 100 + 1); //random number between 100 and 350
     setPos(0, rand_y);
-    setRect(0, 0, 100, 100);
+    setPixmap(QPixmap(":/pictures/birdright.png"));
     //Connect
     QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(move()));
@@ -21,7 +21,7 @@ airplaneleft::airplaneleft()
 void airplaneleft::move()
 {
     //moves enemy right
-    setPos(x() + 3, y());
+    setPos(x() + 5, y());
     //delete enemy when it goes above window and out of scene
     if (pos().x() > 800) {
         scene()->removeItem(this);

@@ -3,6 +3,7 @@
 #include "airplaneleft.h"
 #include "airplaneright.h"
 #include <cstdlib>
+#include <ctime>
 #include <QGraphicsScene>
 #include <QKeyEvent>
 
@@ -12,14 +13,14 @@ void Player::keyPressEvent(QKeyEvent *event)
         if (event->key() == Qt::Key_Left)
             setPos(x() - 20, y());
     }
-    if (pos().x() < 800 - rect().width()) {
+    if (pos().x() < 800 - pixmap().width()) {
         if (event->key() == Qt::Key_Right)
             setPos(x() + 20, y());
     }
     if (event->key() == Qt::Key_Space)
     {
         bullet *my_bullet = new bullet;
-        my_bullet->setPos(x(), y());
+        my_bullet->setPos(x() + 135, y() - 45);
         //Add bullet to scene
         scene()->addItem(my_bullet);
     }
@@ -28,6 +29,7 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 void Player::spawn()
 {
+    srand(int(time(0)));
     int x = rand() % (2);
     if (x == 0) {
         airplaneleft *airplane = new airplaneleft();

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/pictures">
+        <file>stone.png</file>
+        <file>birdright.png</file>
+        <file>birdleft.png</file>
+        <file>launcher.png</file>
+    </qresource>
+</RCC>

@@ -5,7 +5,7 @@ Game::Game()
     //Create scene and player
     scene = new QGraphicsScene;
     player = new Player;
-    player->setRect(0, 0, 100, 100);
+    player->setPixmap(QPixmap(":/pictures/launcher.png"));
 
     //Add item to scene
     scene->addItem(player);
@@ -14,10 +14,21 @@ Game::Game()
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
+    //Add score
+    score = new Score;
+    scene->addItem(score);
+
+    //Add lives
+    lives = new Lives;
+    lives->setPos(x() + 660, y());
+    scene->addItem(lives);
+
     //Add airplanes flying
-    QTimer *timer = new QTimer();
+    QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
-    timer->start(5000);
+    //MAKE AIRPLANES SPAWN FASTER AS SCORE INCREASES
+    int speed = 4000 - 1000*(score->get_score());
+    timer->start(speed);
 
     //Create view to see scene
     view = new QGraphicsView(scene);
@@ -25,7 +36,7 @@ Game::Game()
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setFixedSize(800, 600);
     scene->setSceneRect(0, 0, 800, 600);
-    player->setPos(((view->width()/2) - (player->rect().width()/2)), view->height() - player->rect().height());
+    player->setPos(((view->width()/2) - (player->pixmap().width()/2)), view->height() - player->pixmap().height());
 }
 
 void Game::show()
