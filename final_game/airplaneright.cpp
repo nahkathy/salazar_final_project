@@ -12,6 +12,7 @@ extern Game* game;
 
 airplaneright::airplaneright()
 {
+    if (game->lives->get_lives() == 0) game->view->close();
     int rand_y = 100 + rand() % (275-100+1);
     setPos(800, rand_y);
     setPixmap(QPixmap(":/pictures/marysbird.png"));
@@ -23,8 +24,8 @@ airplaneright::airplaneright()
 
 void airplaneright::move()
 {
-    //moves enemy left
     setPos(x() - 5, y());
+
     //delete enemy when it goes out of scene
     if (x() < 0) {
         qDebug() << "condition met";
@@ -42,7 +43,7 @@ void airplaneright::move()
             delete colliding_items[i];
             delete this;
             return;
-        }
+        } 
     }
 }
 

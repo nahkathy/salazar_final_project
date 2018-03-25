@@ -26,8 +26,7 @@ Game::Game()
     //Add airplanes flying
     QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
-    //MAKE AIRPLANES SPAWN FASTER AS SCORE INCREASES **NEED TO DO **
-    timer->start(1000);
+    timer->start(2000);
 
     //Create view to see scene
     view = new QGraphicsView(scene);

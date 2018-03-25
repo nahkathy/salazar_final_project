@@ -6,6 +6,9 @@
 #include <ctime>
 #include <QGraphicsScene>
 #include <QKeyEvent>
+#include "game.h"
+
+extern Game* game;
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
@@ -30,14 +33,18 @@ void Player::keyPressEvent(QKeyEvent *event)
 void Player::spawn()
 {
     srand(int(time(0)));
-    int x = rand() % (2);
-    if (x == 0) {
-        airplaneleft *airplane = new airplaneleft();
-        scene()->addItem(airplane);
-    }
-    else {
-        airplaneright *airplane2 = new airplaneright();
-        scene()->addItem(airplane2);
+    int scorespeed = game->score->get_score();
+
+    for (int i = -1; i < scorespeed/10; i++) {
+        int x = rand() % (2);
+        if (x == 0) {
+            airplaneleft *airplane = new airplaneleft();
+            scene()->addItem(airplane);
+        }
+        else {
+            airplaneright *airplane2 = new airplaneright();
+            scene()->addItem(airplane2);
+        }
     }
 }
 

@@ -18,10 +18,10 @@ public:
     void show();
     Score *score;
     Lives *lives;
+    QGraphicsView *view;
 private:
     QGraphicsScene *scene;
     Player *player;
-    QGraphicsView *view;
 };
 
 #endif // GAME_H

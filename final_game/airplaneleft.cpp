@@ -9,6 +9,7 @@ extern Game* game;
 
 airplaneleft::airplaneleft()
 {
+    if (game->lives->get_lives() == 0) game->view->close();
     int rand_y = 100 + rand() % (275 - 100 + 1);
     setPos(0, rand_y);
     setPixmap(QPixmap(":/pictures/marysbird2.png"));
