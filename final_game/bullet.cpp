@@ -5,12 +5,22 @@
 #include <QObject>
 #include <QDebug>
 #include <QList>
+#include <QMediaPlayer>
 #include "game.h"
 
 extern Game* game; //external global object called game
 
 bullet::bullet() : QObject(), QGraphicsPixmapItem()
 {
+    QMediaPlayer * bulletsound = new QMediaPlayer;
+    bulletsound->setMedia(QUrl("qrc:/sounds/gunshot.mp3"));
+    bulletsound->setVolume(10);
+    bulletsound->setPlaybackRate(2.5);
+    if (bulletsound->state() == QMediaPlayer::PlayingState)
+        bulletsound->setPosition(0);
+    else if (bulletsound->state() == QMediaPlayer::StoppedState)
+        bulletsound->play();
+
     QPixmap my_bullet(":/pictures/stone.png");
     my_bullet.scaled(10, 30);
     setPixmap(my_bullet);

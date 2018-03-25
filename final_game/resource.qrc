@@ -6,4 +6,8 @@
         <file>marysbird.png</file>
         <file>marysbird2.png</file>
     </qresource>
+    <qresource prefix="/sounds">
+        <file>music.mp3</file>
+        <file>gunshot.mp3</file>
+    </qresource>
 </RCC>

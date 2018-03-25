@@ -34,8 +34,7 @@ void Player::spawn()
 {
     srand(int(time(0)));
     int scorespeed = game->score->get_score();
-
-    for (int i = -1; i < scorespeed/10; i++) {
+    for (int i = -1; i < scorespeed/20; i++) {
         int x = rand() % (2);
         if (x == 0) {
             airplaneleft *airplane = new airplaneleft();
@@ -46,6 +45,7 @@ void Player::spawn()
             scene()->addItem(airplane2);
         }
     }
+
 }
 
 

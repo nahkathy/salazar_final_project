@@ -1,4 +1,5 @@
 #include "game.h"
+#include <QMediaPlayer>
 
 Game::Game()
 {
@@ -23,6 +24,12 @@ Game::Game()
     lives->setPos(x() + 660, y());
     scene->addItem(lives);
 
+    //Add some music
+    QMediaPlayer * music = new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/sounds/music.mp3"));
+    music->setVolume(50);
+    music->play();
+
     //Add airplanes flying
     QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
@@ -42,3 +49,4 @@ void Game::show()
 {
     view->show();
 }
+

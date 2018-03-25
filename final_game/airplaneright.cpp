@@ -12,7 +12,6 @@ extern Game* game;
 
 airplaneright::airplaneright()
 {
-    if (game->lives->get_lives() == 0) game->view->close();
     int rand_y = 100 + rand() % (275-100+1);
     setPos(800, rand_y);
     setPixmap(QPixmap(":/pictures/marysbird.png"));
@@ -35,6 +34,7 @@ void airplaneright::move()
 
     //if airplanes collide with each other
     QList<QGraphicsItem*> colliding_items = collidingItems();
+    if (game->lives->get_lives() == 0) game->view->close();
     for (int i = 0; i < colliding_items.size(); i++) {
         if (typeid(*(colliding_items[i])) == typeid(airplaneleft)) {
             if (game->lives->get_lives() > 0)
@@ -43,7 +43,8 @@ void airplaneright::move()
             delete colliding_items[i];
             delete this;
             return;
-        } 
+        }
+        if (game->lives->get_lives() == 0) game->view->close();
     }
 }
 

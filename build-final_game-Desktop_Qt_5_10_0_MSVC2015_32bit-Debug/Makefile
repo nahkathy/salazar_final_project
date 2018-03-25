@@ -259,8 +259,10 @@ Makefile: ..\final_game\final_game.pro C:\Qt\5.10.0\msvc2015\mkspecs\win32-msvc\
 		C:\Qt\5.10.0\msvc2015\mkspecs\features\lex.prf \
 		..\final_game\final_game.pro \
 		C:\Qt\5.10.0\msvc2015\lib\qtmaind.prl \
+		C:\Qt\5.10.0\msvc2015\lib\Qt5Multimedia.prl \
 		C:\Qt\5.10.0\msvc2015\lib\Qt5Widgets.prl \
 		C:\Qt\5.10.0\msvc2015\lib\Qt5Gui.prl \
+		C:\Qt\5.10.0\msvc2015\lib\Qt5Network.prl \
 		C:\Qt\5.10.0\msvc2015\lib\Qt5Core.prl
 	$(QMAKE) -o Makefile ..\final_game\final_game.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
 C:\Qt\5.10.0\msvc2015\mkspecs\features\spec_pre.prf:
@@ -447,8 +449,10 @@ C:\Qt\5.10.0\msvc2015\mkspecs\features\yacc.prf:
 C:\Qt\5.10.0\msvc2015\mkspecs\features\lex.prf:
 ..\final_game\final_game.pro:
 C:\Qt\5.10.0\msvc2015\lib\qtmaind.prl:
+C:\Qt\5.10.0\msvc2015\lib\Qt5Multimedia.prl:
 C:\Qt\5.10.0\msvc2015\lib\Qt5Widgets.prl:
 C:\Qt\5.10.0\msvc2015\lib\Qt5Gui.prl:
+C:\Qt\5.10.0\msvc2015\lib\Qt5Network.prl:
 C:\Qt\5.10.0\msvc2015\lib\Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\final_game\final_game.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
