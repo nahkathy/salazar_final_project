@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/pictures">
         <file>stone.png</file>
-        <file>birdright.png</file>
-        <file>birdleft.png</file>
         <file>launcher.png</file>
+        <file>sky.jpg</file>
+        <file>marysbird.png</file>
+        <file>marysbird2.png</file>
     </qresource>
 </RCC>

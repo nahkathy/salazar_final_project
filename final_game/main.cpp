@@ -1,5 +1,6 @@
 #include <QApplication>
 #include "game.h"
+#include <QStyle>
 
 Game *game; //make global so you can use in any class
 

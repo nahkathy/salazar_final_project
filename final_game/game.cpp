@@ -26,9 +26,8 @@ Game::Game()
     //Add airplanes flying
     QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
-    //MAKE AIRPLANES SPAWN FASTER AS SCORE INCREASES
-    int speed = 4000 - 1000*(score->get_score());
-    timer->start(speed);
+    //MAKE AIRPLANES SPAWN FASTER AS SCORE INCREASES **NEED TO DO **
+    timer->start(1000);
 
     //Create view to see scene
     view = new QGraphicsView(scene);
@@ -37,6 +36,7 @@ Game::Game()
     view->setFixedSize(800, 600);
     scene->setSceneRect(0, 0, 800, 600);
     player->setPos(((view->width()/2) - (player->pixmap().width()/2)), view->height() - player->pixmap().height());
+    view->setBackgroundBrush(QBrush(QImage(":/pictures/sky.jpg")));
 }
 
 void Game::show()

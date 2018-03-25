@@ -9,9 +9,9 @@ extern Game* game;
 
 airplaneleft::airplaneleft()
 {
-    int rand_y = rand() % (350 - 100 + 1); //random number between 100 and 350
+    int rand_y = 100 + rand() % (275 - 100 + 1);
     setPos(0, rand_y);
-    setPixmap(QPixmap(":/pictures/birdright.png"));
+    setPixmap(QPixmap(":/pictures/marysbird2.png"));
     //Connect
     QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(move()));
